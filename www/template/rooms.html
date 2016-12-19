@@ -1,0 +1,22 @@
+<ion-view view-title="Liste des Salons" ng-controller="RoomsCtrl">
+    <ion-content>
+        <div class="list" style="text-align:center">
+            <button ng-click="modal.show()" class="button button-small button-outline icon-left ion-add button-positive">
+                Ajouter un salon
+            </button>
+        </div>
+        <ion-list ng-show="rooms">
+            <ion-item class="item-icon-left" ng-repeat="room in rooms" type="item-text-wrap" ng-click="openChatRoom(room.id)">
+                <h2>{{room.name}}</h2>
+            </ion-item>
+        </ion-list>
+        <ion-list ng-hide="rooms.length">
+            <ion-item class="textCenter">
+                <i class="icon ion-loading-c"></i> Loading Rooms...
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
+
+
+
